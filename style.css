@@ -75,6 +75,20 @@ body {
     to { transform: scale(1.04); box-shadow: 0 0 30px #1595be; }
 }
 
+.random-track i, .repeat-track i {
+    font-size: 1.4rem !important; /* Boyut büyütüldü */
+}
+
+/* Önceki ve Sonraki Butonları - Masaüstü */
+.prev-track i, .next-track i {
+    font-size: 2rem !important;
+}
+
+/* Oynat/Durdur Butonu - Masaüstü */
+.playpause-track i {
+    font-size: 4.5rem !important; /* Ana buton belirginleştirildi */
+}
+
 /* Şarkı Bilgileri & Kaydırıcılar */
 .track-name { font-size: 1.5rem; margin-top: 10px; height: 40px; overflow: hidden; }
 .track-artist { font-size: 0.9rem; color: #555; font-weight: normal; }
@@ -87,9 +101,9 @@ body {
 .volume_slider { width: 100px; cursor: pointer; }
 
 /* Kontrol Butonları */
-.buttons_container { display: flex; justify-content: center; align-items: center; width: 100%; gap: 20px; }
-.buttons_container div { cursor: pointer; opacity: 0.8; transition: 0.2s; }
-.buttons_container div:hover { opacity: 1; }
+.buttons_container { display: flex; justify-content: center; align-items: center; width: 100%; gap: 30px; }
+.buttons_container div { cursor: pointer; opacity: 0.8; transition: 0.3s; }
+.buttons_container div:hover { opacity: 1; transform: scale(1.1);}
 .randomActive { color: #20028d !important; opacity: 1 !important; }
 .repeatActive { color: #20028d !important; opacity: 1 !important; }
 
@@ -288,4 +302,26 @@ body {
     /* İnce Scrollbar */
     #playlist-items::-webkit-scrollbar { width: 3px; }
     #playlist-items::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+
+    .buttons_container {
+        gap: 20px !important;
+        margin: 15px 0 !important;
+    }
+
+    /* Rıştır ve Tekrar - Mobil */
+    .random-track i, .repeat-track i {
+        font-size: 1.7rem !important; /* Mobilde parmakla basım için daha büyük */
+    }
+
+    /* Önceki ve Sonraki - Mobil */
+    .prev-track i, .next-track i {
+        font-size: 2.2rem !important;
+    }
+
+    /* Oynat/Durdur - Mobil */
+    .playpause-track i {
+        font-size: 4rem !important;
+    }
+
+    
 }
