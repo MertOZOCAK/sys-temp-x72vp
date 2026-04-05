@@ -39,6 +39,7 @@ const music_list = [
     { img: 'images/logo.png', name: 'Lan', artist: 'Zeynep Bastık', music: 'music/Lan.mp3' },
     { img: 'images/logo.png', name: 'Seni Düşündüm', artist: 'Çağla, Doğu Swag', music: 'music/SeniDüşündüm.mp3' },
     { img: 'images/logo.png', name: 'Şehrin Yolu', artist: 'Feride Hilal Akın, İlyas Yalçıntaş', music: 'music/ŞehrinYolu.mp3' },
+    { img: 'images/logo.png', name: 'Ela Mana', artist: 'Yüksel Baltacı', music: 'music/ELAMANA.mp3' },
   //{ img: 'images/.jpg', name: '', artist: '', music: 'music/.mp3' },
     { img: 'images/ratherbe.jpg', name: 'Rather Be', artist: 'Clean Bandit', music: 'music/Rather Be.mp3' }
 ];
