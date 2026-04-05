@@ -31,6 +31,14 @@ const music_list = [
     { img: 'images/fallingdown.jpg', name: 'Falling Down', artist: 'Wid Cards', music: 'music/fallingdown.mp3' },
     { img: 'images/faded.png', name: 'Faded', artist: 'Alan Walker', music: 'music/Faded.mp3' },
     { img: 'images/logo.png', name: 'İçimdeki Sen', artist: 'Bilal Sonses, Tuğçe Kandemir', music: 'music/İçimdekiSen.mp3' },
+    { img: 'images/logo.png', name: 'Sar Zamanımızı Geriye', artist: 'Amo988', music: 'music/SarZamanımızıGeriye.mp3' },
+    { img: 'images/logo.png', name: 'Aldanırım', artist: 'Sıla Şahin, Samet Kardeşler', music: 'music/Aldanırım.mp3' },
+    { img: 'images/logo.png', name: 'Görmedim Sen Gibi', artist: 'Bilal Sonses', music: 'music/GörmedimSenGibi.mp3' },
+    { img: 'images/logo.png', name: 'Dön Diyemem', artist: 'Bilal Sonses', music: 'music/DönDiyemem.mp3' },
+    { img: 'images/logo.png', name: 'İçimden Gelmiyor', artist: 'Bilal Sonses', music: 'music/İçimdenGelmiyor.mp3' },
+    { img: 'images/logo.png', name: 'Lan', artist: 'Zeynep Bastık', music: 'music/Lan.mp3' },
+    { img: 'images/logo.png', name: 'Seni Düşündüm', artist: 'Çağla, Doğu Swag', music: 'music/SeniDüşündüm.mp3' },
+    { img: 'images/logo.png', name: 'Şehrin Yolu', artist: 'Feride Hilal Akın, İlyas Yalçıntaş', music: 'music/ŞehrinYolu.mp3' },
   //{ img: 'images/.jpg', name: '', artist: '', music: 'music/.mp3' },
     { img: 'images/ratherbe.jpg', name: 'Rather Be', artist: 'Clean Bandit', music: 'music/Rather Be.mp3' }
 ];
