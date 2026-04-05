@@ -30,6 +30,7 @@ body {
 .nav-menu { display: flex; gap: 25px; }
 .nav-link { text-decoration: none; color: #444; font-size: 0.95rem; font-weight: 600; transition: 0.3s; }
 .nav-link:hover, .nav-link.active { color: #1595be; }
+.nav-link:hover, .nav-link.premium { color: #ff0000; }
 
 .nav-auth { display: flex; align-items: center; gap: 15px; }
 .btn-login { background: transparent; border: none; font-weight: bold; color: #444; cursor: pointer; }
