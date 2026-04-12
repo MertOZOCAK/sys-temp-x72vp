@@ -37,7 +37,7 @@ const music_list = [
     { img: 'images/logo.png', name: 'Babuba', artist: 'Kubat', music: 'music/Babuba.mp3' },
     { img: 'images/logo.png', name: 'Mevlam Birçok Dert Vermiş', artist: 'Kubat', music: 'music/MevlamBirçokDertVermiş.mp3' },
     { img: 'images/logo.png', name: 'Evlenmirem', artist: 'Kubat', music: 'music/Evlenmirem.mp3' },
-    { img: 'images/logo.png', name: 'Yüce Dağ Başına', artist: 'Kubat', music: 'music/YüceDağBaşına.mp3' },
+    { img: 'images/logo.png', name: 'Yüce Dağ Başında', artist: 'Kubat', music: 'music/YüceDağBaşında.mp3' },
     { img: 'images/logo.png', name: 'Yekte', artist: 'Kubat', music: 'music/Yekte.mp3' },
     { img: 'images/logo.png', name: 'Değme Felek', artist: 'Kubat', music: 'music/DeğmeFelek.mp3' },
     { img: 'images/logo.png', name: 'Tiryakinim', artist: 'Bayhan Gürhan', music: 'music/Tiryakinim.mp3' },
