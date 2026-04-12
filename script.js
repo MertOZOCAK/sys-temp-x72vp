@@ -26,23 +26,23 @@ let updateTimer;
 let track_history = [];
 
 const music_list = [
-    { img: '../images/logo.png', name: 'Ah Ellerim Kırılaydı', artist: 'Tuğçe Kandemir', music: '../music/stay.mp3' },
-    { img: '../images/logo.png', name: 'Yol Arkadaşım', artist: 'Bayhan Gürhan', music: '../music/YolArkadaşım.mp3' },
-    { img: '../images/logo.png', name: 'Salını Salını', artist: 'Bayhan Gürhan', music: '../music/SalınıSalını.mp3' },
-    { img: '../images/logo.png', name: 'Tiryakinim', artist: 'Bayhan Gürhan', music: '../music/Tiryakinim.mp3' },
-    { img: '../images/logo.png', name: 'Sar Zamanımızı Geriye', artist: 'Amo988', music: '../music/SarZamanımızıGeriye.mp3' },
-    { img: '../images/logo.png', name: 'Aldanırım', artist: 'Sıla Şahin, Samet Kardeşler', music: '../music/Aldanırım.mp3' },
-    { img: '../images/logo.png', name: 'Görmedim Sen Gibi', artist: 'Bilal Sonses', music: '../music/GörmedimSenGibi.mp3' },
-    { img: '../images/logo.png', name: 'Dön Diyemem', artist: 'Bilal Sonses', music: '../music/DönDiyemem.mp3' },
-    { img: '../images/logo.png', name: 'İçimden Gelmiyor', artist: 'Bilal Sonses', music: '../music/İçimdenGelmiyor.mp3' },
-    { img: '../images/logo.png', name: 'Lan', artist: 'Zeynep Bastık', music: '../music/Lan.mp3' },
-    { img: '../images/logo.png', name: 'Seni Düşündüm', artist: 'Çağla, Doğu Swag', music: '../music/Seni Düşündüm.mp3' },
-    { img: '../images/logo.png', name: 'Şehrin Yolu', artist: 'Feride Hilal Akın, İlyas Yalçıntaş', music: '../music/ŞehrinYolu.mp3' },
-    { img: '../images/logo.png', name: 'Sana Yıldızları Ödediğimden', artist: 'Bengü Peker', music: '../music/SanaYıldızlarıÖdediğimden.mp3' },
-    { img: '../images/logo.png', name: 'Sensizlik', artist: 'Shahlo Azimova', music: '../music/Sensizlik.mp3' },
-    { img: '../images/fallingdown.jpg', name: 'Falling Down', artist: 'Wid Cards', music: '../music/fallingdown.mp3' },
-    { img: '../images/logo.png', name: 'İçimdeki Sen', artist: 'Bilal Sonses, Tuğçe Kandemir', music: '../music/İçimdekiSen.mp3' },
-    { img: '../images/ratherbe.jpg', name: 'Rather Be', artist: 'Clean Bandit', music: '../music/Rather Be.mp3' }
+    { img: 'images/logo.png', name: 'Ah Ellerim Kırılaydı', artist: 'Tuğçe Kandemir', music: 'music/stay.mp3' },
+    { img: 'images/logo.png', name: 'Yol Arkadaşım', artist: 'Bayhan Gürhan', music: 'music/YolArkadaşım.mp3' },
+    { img: 'images/logo.png', name: 'Salını Salını', artist: 'Bayhan Gürhan', music: 'music/SalınıSalını.mp3' },
+    { img: 'images/logo.png', name: 'Tiryakinim', artist: 'Bayhan Gürhan', music: 'music/Tiryakinim.mp3' },
+    { img: 'images/logo.png', name: 'Sar Zamanımızı Geriye', artist: 'Amo988', music: 'music/SarZamanımızıGeriye.mp3' },
+    { img: 'images/logo.png', name: 'Aldanırım', artist: 'Sıla Şahin, Samet Kardeşler', music: 'music/Aldanırım.mp3' },
+    { img: 'images/logo.png', name: 'Görmedim Sen Gibi', artist: 'Bilal Sonses', music: 'music/GörmedimSenGibi.mp3' },
+    { img: 'images/logo.png', name: 'Dön Diyemem', artist: 'Bilal Sonses', music: 'music/DönDiyemem.mp3' },
+    { img: 'images/logo.png', name: 'İçimden Gelmiyor', artist: 'Bilal Sonses', music: 'music/İçimdenGelmiyor.mp3' },
+    { img: 'images/logo.png', name: 'Lan', artist: 'Zeynep Bastık', music: 'music/Lan.mp3' },
+    { img: 'images/logo.png', name: 'Seni Düşündüm', artist: 'Çağla, Doğu Swag', music: 'music/Seni Düşündüm.mp3' },
+    { img: 'images/logo.png', name: 'Şehrin Yolu', artist: 'Feride Hilal Akın, İlyas Yalçıntaş', music: 'music/ŞehrinYolu.mp3' },
+    { img: 'images/logo.png', name: 'Sana Yıldızları Ödediğimden', artist: 'Bengü Peker', music: 'music/SanaYıldızlarıÖdediğimden.mp3' },
+    { img: 'images/logo.png', name: 'Sensizlik', artist: 'Shahlo Azimova', music: 'music/Sensizlik.mp3' },
+    { img: 'images/fallingdown.jpg', name: 'Falling Down', artist: 'Wid Cards', music: 'music/fallingdown.mp3' },
+    { img: 'images/logo.png', name: 'İçimdeki Sen', artist: 'Bilal Sonses, Tuğçe Kandemir', music: 'music/İçimdekiSen.mp3' },
+    { img: 'images/ratherbe.jpg', name: 'Rather Be', artist: 'Clean Bandit', music: 'music/Rather Be.mp3' }
 ];
 
 loadTrack(track_index);
