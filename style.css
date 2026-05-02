@@ -166,7 +166,13 @@ body {
 .player.video-mode .video-container { display: block; }
 .media-type-selector { display: flex; justify-content: center; gap: 10px; margin: 10px 0 8px; }
 .type-btn { cursor: pointer; padding: 2px 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.8rem; transition: 0.3s; }
-.type-btn.active { background: #1595be; color: white; border-color: #1595be; }
+/* Mavi yerine Kırmızı olan bölüm */
+.type-btn.active { 
+    background: #e74c3c; 
+    color: white; 
+    border-color: #e74c3c; 
+    transition: 0.3s;
+}
 .now-playing { margin-bottom: 8px; }
 .speed-container { position: relative; margin-left: 10px; }
 .speed-options { 
