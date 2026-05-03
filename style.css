@@ -20,13 +20,14 @@ body {
 }
 
 .nav-pill {
-    background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
     padding: 10px 30px; border-radius: 50px; display: flex;
     align-items: center; justify-content: flex-start; width: 90%; max-width: 1100px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.nav-logo { display: flex; align-items: center; gap: 10px; color: #9a1d86; font-size: 1.3rem; font-weight: 800; }
+.nav-logo { display: flex; align-items: center; gap: 10px; color: #0003b6 !important; font-size: 1.1rem !important; font-weight: 800; }
 .nav-menu { display: flex; gap: 25px; margin: 0 auto; justify-content: center; }
 .nav-link { text-decoration: none; color: #444; font-size: 0.95rem; font-weight: 600; transition: 0.3s; }
 .nav-auth { margin-left: auto; }
@@ -363,7 +364,7 @@ body {
 
 /* Şarkı Listesi Paneli */
 .playlist-panel { 
-    width: 0; opacity: 0; overflow: hidden; 
+    width: 0; opacity: 0; overflow: hidden;
     transition: all 0.5s ease; background: #fdfdfd; border-radius: 20px;
     display: flex; flex-direction: column;
 }
@@ -496,7 +497,7 @@ body {
     }
 }
 
-/* --- MOBİL TASARIM (ÖZEL DÜZENLEME) --- */
+/* --- MOBİL TASARIM (BAŞLIK VE LİSTE TAM ORTALANMIŞ) --- */
 @media screen and (max-width: 600px) {
     html, body {
         height: auto !important;
@@ -505,50 +506,24 @@ body {
     }
 
     body {
-        /* NovaStream yazısını yukarıdan uzaklaştırmak için üst boşluk artırıldı */
         padding: 120px 15px 50px 15px !important;
     }
 
-    /* Navbar (NovaStream Yazısı) Ayarı */
+    /* Navbar */
     .nav-pill {
         width: 90% !important;
-        top: 30px !important; /* Yazıyı en tepeden aşağı çektik */
+        top: 30px !important; 
+        left: 5% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 8px 10px 8px 18px !important;
         background: rgba(255, 255, 255, 0.2) !important;
         backdrop-filter: blur(10px) !important;
-        border-radius: 20px !important;
-        left: 5% !important;
-        flex-wrap: wrap !important;
-        justify-content: space-between !important;
-        gap: 10px;
-        padding: 15px 12px !important;
+        border-radius: 50px !important;
     }
 
-    .nav-menu {
-        display: none !important;
-    }
-
-    .nav-auth {
-        display: flex !important;
-        margin-left: auto !important;
-    }
-
-    .nav-toggle {
-        display: none !important;
-    }
-
-    .mobile-menu {
-        width: 100%;
-        padding: 10px 0 0;
-    }
-
-    .nav-auth a {
-        white-space: nowrap;
-    }
-
-    .btn-login, .btn-signup {
-        padding: 8px 14px !important;
-        font-size: 0.85rem !important;
-    }
+    .nav-menu, .nav-toggle { display: none !important; }
 
     /* Ana Panel */
     .player {
@@ -560,110 +535,85 @@ body {
     .wrapper {
         background: #ffffff !important;
         border-radius: 30px !important;
-        padding: 20px 15px !important;
-        height: auto !important;
+        padding: 25px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
         display: flex !important;
         flex-direction: column !important;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+        align-items: center !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
     }
 
-    /* Müzik Kısmı (Görsel ve Yazılar) */
-    .track-art {
-        height: 130px !important; /* Ekrana sığması için hafif küçültüldü */
-        width: 130px !important;
-        margin: 0 auto 10px auto !important;
-    }
-
-    .track-name { font-size: 1.1rem !important; margin-top: 5px; }
-    .track-artist { font-size: 0.9rem !important; }
-
-    /* ŞARKI LİSTESİ - DAHA FAZLA ŞARKI GÖRÜNÜR */
+    /* ŞARKI LİSTESİ BAŞLIĞI VE PANELİ */
     .playlist-panel {
         width: 100% !important;
-        margin-left: 0 !important;
-        background: #fdfdfd !important;
+        display: none !important;
+        box-sizing: border-box !important;
+        margin-top: 15px !important;
+        padding: 10px 0 !important;
         border-top: 1px solid #eee !important;
-        max-height: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: center !important; /* Başlığı ortalar */
+    }
+
+    .playlist-panel h3, .playlist-panel .title { 
+        width: 100% !important;
+        text-align: center !important; 
+        display: block !important;
+        margin-bottom: 10px !important;
     }
 
     .playlist-panel.open {
-        /* Listenin toplam yüksekliğini artırdık */
-        max-height: 800px !important; 
-        opacity: 1 !important;
-        visibility: visible !important;
-        padding: 15px 5px !important;
-        margin-top: 10px !important;
+        display: block !important;
     }
 
+    /* LİSTE ÖĞELERİNİ MERKEZLEME */
     #playlist-items {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        /* Kaydırma alanını 550px yaparak 2 değil 5-6 şarkı görünmesini sağladık */
-        height: 1550px !important; 
-        overflow-y: auto;
-        padding-right: 5px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; 
+        width: 100% !important;
+        height: 300px !important; 
+        max-height: 300px !important;
+        overflow-y: auto !important;
+        padding: 5px 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
     }
 
     .playlist-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 12px !important;
-        border-radius: 12px !important;
+        margin: 0 0 10px 0 !important; 
         background: #fff;
-        border: 1px solid #f5f5f5;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        border: 1px solid #f2f2f2;
+        border-radius: 15px !important;
+        box-sizing: border-box !important;
     }
 
-    .playlist-item.active {
-        background: rgba(154, 29, 134, 0.05) !important;
-        border-left: 5px solid #9a1d86 !important;
-    }
-
-    /* İnce Scrollbar */
-    #playlist-items::-webkit-scrollbar { width: 3px; }
-    #playlist-items::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
-
+    /* Kontroller */
     .buttons_container {
-        gap: 20px !important;
-        margin: 15px 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin: 20px 0 !important;
     }
 
-    /* Rıştır ve Tekrar - Mobil */
-    .random-track i, .repeat-track i {
-        font-size: 1.7rem !important; /* Mobilde parmakla basım için daha büyük */
+    .playpause-track i { font-size: 3.8rem !important; }
+    .prev-track i, .next-track i { font-size: 2rem !important; }
+
+    /* Scrollbar */
+    #playlist-items::-webkit-scrollbar { width: 4px; }
+    #playlist-items::-webkit-scrollbar-thumb {
+        background: #9a1d86;
+        border-radius: 10px;
     }
-
-    /* Önceki ve Sonraki - Mobil */
-    .prev-track i, .next-track i {
-        font-size: 2.2rem !important;
-    }
-
-    /* Oynat/Durdur - Mobil */
-    .playpause-track i {
-        font-size: 4rem !important;
-    }
-
-    /* Şarkı listesi açma butonu dokunma efekti */
-    .menu-btn:active {
-        transform: scale(1.3) !important; /* Dokunulduğu an %30 büyür */
-        color: #1595be !important; /* Dokunulduğunda mavi renk yanar */
-        transition: 0.1s; /* Tepki süresi mobilde daha hızlı olmalı */
-    }
-
-    /* Diğer kontrol butonları için de (Shuffle, Prev, Play, Next, Repeat) 
-       dokunma geri bildirimi ekleyelim */
-    .buttons_container div:active i {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-
-    .buttons_container div, .menu-btn, .speed-btn, .type-btn {
-    -webkit-tap-highlight-color: transparent; /* Mobildeki mavi gölgeyi kaldırır */
-}
-
-    
 }
