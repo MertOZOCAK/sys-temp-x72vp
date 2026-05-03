@@ -25,6 +25,33 @@ let isVideoMode = false; // Video mod kontrolü
 let updateTimer;
 let track_history = [];
 
+function updatePlayPauseUI() {
+    if (isPlaying) {
+        playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+        wave.classList.add('loader');
+        if (!isVideoMode) track_art.classList.add('neon-glow');
+    } else {
+        playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+        wave.classList.remove('loader');
+        track_art.classList.remove('neon-glow');
+    }
+}
+
+function syncPlayPauseUI() {
+    isPlaying = !curr_track.paused;
+    updatePlayPauseUI();
+}
+
+curr_track.addEventListener('pause', syncPlayPauseUI);
+curr_track.addEventListener('play', syncPlayPauseUI);
+window.addEventListener('keydown', (event) => {
+    if (event.altKey && event.key === 'F7') {
+        if (!curr_track.paused) {
+            pauseTrack();
+        }
+    }
+});
+
 const music_list = [
     { img: 'images/logo.png', name: 'Ah Ellerim Kırılaydı', artist: 'Tuğçe Kandemir', music: 'music/stay.mp3' },
     { img: 'images/logo.png', name: 'Yol Arkadaşım', artist: 'Bayhan Gürhan', music: 'music/YolArkadaşım.mp3' },
@@ -80,6 +107,7 @@ function loadTrack(index) {
     updateTimer = setInterval(setUpdate, 1000);
     
     curr_track.onended = () => { isRepeat ? (loadTrack(track_index), playTrack()) : nextTrack(); };
+    curr_video.onended = () => { isRepeat ? (loadTrack(track_index), playTrack()) : nextTrack(); };
     if (isVideoMode) setMediaType('video');
     renderPlaylist();
 }
@@ -95,18 +123,13 @@ function playpauseTrack() { isPlaying ? pauseTrack() : playTrack(); }
 function playTrack() {
     curr_track.play();
     isPlaying = true;
-    if (!isVideoMode) track_art.classList.add('neon-glow');
-    else track_art.classList.remove('neon-glow');
-    wave.classList.add('loader');
-    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+    updatePlayPauseUI();
 }
 
 function pauseTrack() {
     curr_track.pause();
     isPlaying = false;
-    track_art.classList.remove('neon-glow');
-    wave.classList.remove('loader');
-    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    updatePlayPauseUI();
 }
 
 function nextTrack() {
@@ -135,9 +158,14 @@ function seekTo() {
     curr_track.currentTime = seekto;
 }
 
+// Ses seviyesini güncelleyen fonksiyon
 function setVolume() {
     curr_track.volume = volume_slider.value / 100;
 }
+
+// Ses kaydırıcısına canlı değişim (input) dinleyicisi ekleme
+// (Not: volume_slider değişkeni kodun başında tanımlandığı için burada tekrar tanımlanmadı)
+volume_slider.addEventListener('input', setVolume);
 
 // --- YENİ EKLENEN/GERİ GELEN FONKSİYONLAR ---
 
@@ -176,6 +204,12 @@ function setMediaType(type) {
 function randomTrack() { isRandom = !isRandom; randomIcon.classList.toggle('randomActive', isRandom); }
 function repeatTrack() { isRepeat = !isRepeat; repeatIcon.classList.toggle('repeatActive', isRepeat); }
 function togglePlaylist() { document.getElementById('playlist-panel').classList.toggle('open'); }
+function toggleMobileMenu() {
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+}
 
 function renderPlaylist() {
     const list = document.getElementById('playlist-items');
@@ -195,7 +229,8 @@ function playFromList(index) {
 }
 
 function setUpdate() {
-    let active = curr_track;
+    // Video modunda olsak bile video dosyası yoksa müzik dosyasını dinle
+    let active = (isVideoMode && music_list[track_index].video) ? curr_video : curr_track;
     
     if (!isNaN(active.duration)) {
         seek_slider.value = active.currentTime * (100 / active.duration);
