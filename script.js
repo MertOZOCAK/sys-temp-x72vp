@@ -69,6 +69,7 @@ const music_list = [
     { img: 'images/logo.png', name: 'Değme Felek', artist: 'Kubat', music: 'music/DeğmeFelek.mp3' },
     { img: 'images/logo.png', name: 'Tiryakinim', artist: 'Bayhan Gürhan', music: 'music/Tiryakinim.mp3' },
     { img: 'images/logo.png', name: 'Sar Zamanımızı Geriye', artist: 'Amo988', music: 'music/SarZamanımızıGeriye.mp3' },
+    { img: 'images/logo.png', name: 'Eller Üzer', artist: 'Serkan Nişancı', music:'music/EllerÜzer.mp3' },
     { img: 'images/logo.png', name: 'Aldanırım', artist: 'Sıla Şahin, Samet Kardeşler', music: 'music/Aldanırım.mp3' },
     { img: 'images/logo.png', name: 'Görmedim Sen Gibi', artist: 'Bilal Sonses', music: 'music/GörmedimSenGibi.mp3' },
     { img: 'images/logo.png', name: 'Dön Diyemem', artist: 'Bilal Sonses', music: 'music/DönDiyemem.mp3' },
